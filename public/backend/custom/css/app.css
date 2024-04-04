@@ -1,0 +1,67 @@
+.sidebar-light-info .nav-sidebar>.nav-item>.nav-link.active{
+    /* background-color: #28914A !important; */
+}
+.sidebar .nav-item .nav-link{
+    padding: 0.5rem;
+}
+
+@font-face {
+    font-family: 'Montserrat',sans-serif,'Hanuman';
+    src:  url('public/font/Hanuman-Light.ttf') format('ttf');
+    src:  url('public/font/Montserrat-Light.ttf') format('ttf');
+}
+:root {
+    --system-font: 'Roboto', sans-serif;
+}
+body{
+font-family:  var(--system-font);
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgba(181, 180, 180, 0.888) !important;
+    opacity: 1; /* Firefox */
+  }
+
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: rgba(181, 180, 180, 0.888)  !important;
+  }
+
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: rgba(181, 180, 180, 0.888)  !important;
+  }
+
+  label:not(.form-check-label):not(.custom-file-label) {
+    font-weight: 500 !important;
+}
+table tr th {
+    text-transform: uppercase;
+}
+[class*=sidebar-light-] .nav-sidebar>.nav-item.menu-open>.nav-link{
+    background-color: rgb(237 78 69);
+    color: #ffffff;
+}
+
+table .profile-image{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.text-sm .select2-container--default .select2-selection--single{
+    height: unset !important;
+}
+.modal-header{
+    padding: 0.5rem 1rem !important;
+}
+.layout-fixed .main-sidebar{
+    bottom: 0;
+    float: none;
+    left: 0;
+    position: fixed;
+    top: 0;
+    overflow-y:scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 0;
+  }
+
