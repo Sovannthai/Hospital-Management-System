@@ -37,7 +37,7 @@
                         </p>
                     </a>
                 </li>
-                <li class="nav-item" id="menu_employee_mg">
+                <li class="nav-item @if(Route::is('role.*')||Route::is('add_role*')||Route::is('edit_role*')) menu-open @endif" id="menu_employee_mg">
                     {{-- menu-open --}}
                     <a href="#" class="nav-link custom-ml" id="menu_employee_bg">
                         <i class="nav-icon fas fa-users"></i>
@@ -50,6 +50,12 @@
                             <a href="#" class="nav-link custom-ml" id="menu_employess">
                                 <i class="fa-solid fa-plus nav-icon"></i>
                                 <p>User</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('role.index') }}" class="nav-link custom-ml @if(Route::is('role.index')) active @endif" id="menu_employess">
+                                <i class="fa-solid fa-plus nav-icon"></i>
+                                <p>Role</p>
                             </a>
                         </li>
                     </ul>

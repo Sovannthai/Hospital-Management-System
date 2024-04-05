@@ -63,5 +63,8 @@ table .profile-image{
 }
 ::-webkit-scrollbar {
     width: 0;
-  }
+}
+.card{
+    font-size: 16px;
+}
 
