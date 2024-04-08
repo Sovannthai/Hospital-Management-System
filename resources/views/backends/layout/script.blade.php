@@ -110,18 +110,20 @@
         $('.select2').select2();
     });
 </script>
-
+<script>
+    $(function () {
+      $("#example1").DataTable({
+        "responsive": true, "lengthChange": false, "autoWidth": false,
+        "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+      }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+      $(".datatable").DataTable({
+        "responsive": true, "lengthChange": false, "autoWidth": false,
+        "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+      }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    });
+  </script>
 <script>
     $(document).ready(function() {
-        $(".datatable").DataTable({
-            "lengthChange": false,
-            "ordering": true,
-            "autoWidth": false,
-            "responsive": true,
-            "searching": false,
-            "paging": false,
-            "info": false
-        }).buttons().container();
         // Dropify
         $('.dropify').dropify();
         var drEvent = $('.dropify').dropify();
@@ -131,8 +133,8 @@
 
 
         bsCustomFileInput.init();
-        var success_audio = "{{ URL::asset('sound/success.wav') }}";
-        var error_audio = "{{ URL::asset('sound/error.wav') }}";
+        var success_audio = "{{ URL::asset('sound/success.mp3') }}";
+        var error_audio = "{{ URL::asset('sound/error.mp3') }}";
         var success = new Audio(success_audio);
         var error = new Audio(error_audio);
 

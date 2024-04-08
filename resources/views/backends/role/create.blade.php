@@ -11,6 +11,7 @@
         position: relative;
         left: 10px;
     }
+
 </style>
 <div class="card">
     <div class="card-body">
@@ -61,30 +62,6 @@
                 </div>
             </div>
             <hr>
-            {{-- <div class="user">User Type</div>
-                    <div class="row">
-                        <div class="custom-control col-3 custom-switch">
-                            <label style="position: absolute">View</label>
-                            <input type="checkbox" name="permissions[]" value="view.user_type" class="custom-control-input toggle-status" id="user_type" data-id="">
-                            <label class="custom-control-label" for="user_type"></label>
-                        </div>
-                        <div class="custom-control col-3 custom-switch">
-                            <label for="" style="position: absolute">Create</label>
-                            <input type="checkbox" name="permissions[]" value="create.user_type" class="custom-control-input toggle-status" id="user_type1" data-id="">
-                            <label class="custom-control-label" for="user_type1"></label>
-                        </div>
-                        <div class="custom-control col-3 custom-switch">
-                            <label for="" style="position: absolute">Edit</label>
-                            <input type="checkbox" name="permissions[]" value="edit.user_type" class="custom-control-input toggle-status" id="user_type2" data-id="">
-                            <label class="custom-control-label" for="user_type2"></label>
-                        </div>
-                        <div class="custom-control col-3 custom-switch">
-                            <label for="" style="position: absolute">Delete</label>
-                            <input type="checkbox" name="permissions[]" value="delete.user_type" class="custom-control-input toggle-status" id="user_type3" data-id="">
-                            <label class="custom-control-label" for="user_type3"></label>
-                        </div>
-                    </div>
-                    <hr> --}}
             <div class="user">Role</div>
             <div class="row">
                 <div class="custom-control col-3 custom-switch">
@@ -133,29 +110,6 @@
                 </div>
             </div>
             <hr>
-            {{-- <div class="product">Employee Group</div>
-                    <div class="row">
-                        <div class="custom-control col-3 custom-switch">
-                            <label for="" style="position: absolute">View</label>
-                            <input type="checkbox" name="permissions[]" value="view.emp_group" class="custom-control-input toggle-status" id="emp_group" data-id="">
-                            <label class="custom-control-label" for="emp_group"></label>
-                        </div>
-                        <div class="custom-control col-3 custom-switch">
-                            <label for="" style="position: absolute">Create</label>
-                            <input type="checkbox" name="permissions[]" value="create.emp_group" class="custom-control-input toggle-status" id="emp_group1" data-id="">
-                            <label class="custom-control-label" for="emp_group1"></label>
-                        </div>
-                        <div class="custom-control col-3 custom-switch">
-                            <label for="" style="position: absolute">Edit</label>
-                            <input type="checkbox" name="permissions[]" value="edit.emp_group" class="custom-control-input toggle-status" id="emp_group2" data-id="">
-                            <label class="custom-control-label" for="emp_group2"></label>
-                        </div>
-                        <div class="custom-control col-3 custom-switch">
-                            <label for="" style="position: absolute">Delete</label>
-                            <input type="checkbox" name="permissions[]" value="delete.emp_group" class="custom-control-input toggle-status" id="emp_group3" data-id="">
-                            <label class="custom-control-label" for="emp_group3"></label>
-                        </div>
-                    </div> --}}
             <div class="product">Disease</div>
             <div class="row">
                 <div class="custom-control col-3 custom-switch">
@@ -252,54 +206,6 @@
                 </div>
             </div>
             <hr>
-            {{-- <div class="product">Category</div>
-                    <div class="row">
-                        <div class="custom-control col-3 custom-switch">
-                            <label for="" style="position: absolute">View</label>
-                            <input type="checkbox" name="permissions[]" value="view.category" class="custom-control-input toggle-status" id="category" data-id="">
-                            <label class="custom-control-label" for="category"></label>
-                        </div>
-                        <div class="custom-control col-3 custom-switch">
-                            <label for="" style="position: absolute">Create</label>
-                            <input type="checkbox" name="permissions[]" value="create.category" class="custom-control-input toggle-status" id="category1" data-id="">
-                            <label class="custom-control-label" for="category1"></label>
-                        </div>
-                        <div class="custom-control col-3 custom-switch">
-                            <label for="" style="position: absolute">Edit</label>
-                            <input type="checkbox" name="permissions[]" value="edit.category" class="custom-control-input toggle-status" id="category2" data-id="">
-                            <label class="custom-control-label" for="category2"></label>
-                        </div>
-                        <div class="custom-control col-3 custom-switch">
-                            <label for="" style="position: absolute">Delete</label>
-                            <input type="checkbox" name="permissions[]" value="delete.category" class="custom-control-input toggle-status" id="category3" data-id="">
-                            <label class="custom-control-label" for="category3"></label>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="product">Unit</div>
-                    <div class="row">
-                        <div class="custom-control col-3 custom-switch">
-                            <label for="" style="position: absolute">View</label>
-                            <input type="checkbox" name="permissions[]" value="view.unit" class="custom-control-input toggle-status" id="unit" data-id="">
-                            <label class="custom-control-label" for="unit"></label>
-                        </div>
-                        <div class="custom-control col-3 custom-switch">
-                            <label for="" style="position: absolute">Create</label>
-                            <input type="checkbox" name="permissions[]" value="create.unit" class="custom-control-input toggle-status" id="unit1" data-id="">
-                            <label class="custom-control-label" for="unit1"></label>
-                        </div>
-                        <div class="custom-control col-3 custom-switch">
-                            <label for="" style="position: absolute">Edit</label>
-                            <input type="checkbox" name="permissions[]" value="edit.unit" class="custom-control-input toggle-status" id="unit2" data-id="">
-                            <label class="custom-control-label" for="unit2"></label>
-                        </div>
-                        <div class="custom-control col-3 custom-switch">
-                            <label for="" style="position: absolute">Delete</label>
-                            <input type="checkbox" name="permissions[]" value="delete.unit" class="custom-control-input toggle-status" id="unit3" data-id="">
-                            <label class="custom-control-label" for="unit3"></label>
-                        </div>
-                    </div>
-                    <hr> --}}
             <div class="product">Laboratory</div>
             <div class="row">
                 <div class="custom-control col-3 custom-switch">

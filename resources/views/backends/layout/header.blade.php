@@ -31,12 +31,12 @@
 
         <li class="nav-item dropdown user-menu">
             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                <img src="{{ asset('uploads/all_photo/user.jpg') }}" class="user-image img-circle" alt="User Image">
+                <img src="{{ asset('uploads/all_photo/'.auth()->user()->photo) }}" class="user-image img-circle" alt="User Image">
             </a>
             <ul class="dropdown-menu dropdown-menu-right">
                 <!-- User image -->
                 <li class="user-header">
-                    <img src="{{ asset('uploads/all_photo/user.jpg') }}"  style="width: 110px;height:115px;" class="img-circle" alt="User Image">
+                    <img src="{{ asset('uploads/all_photo/'.auth()->user()->photo) }}" style="width: 110px;height:115px;" class="img-circle" alt="User Image">
 
                     <p><b>
                             {{ auth()->user()->name }}
@@ -47,7 +47,7 @@
                     <a href="#" class="btn  btn-flat btn-outline-secondary">Profile</a>
                     <form action="{{ route('logout') }}" method="post" style="display: inline-block;">
                         @csrf
-                        <button type="submit" class="btn  btn-flat btn-outline-secondary" style="position: relative;
+                        <button type="submit" class="btn  btn-flat btn-outline-danger" style="position: relative;
                         left: 130px;">Sing out</button>
                     </form>
                 </li>

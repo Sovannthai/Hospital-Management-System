@@ -116,8 +116,8 @@ class RoleController extends Controller
         } catch (Exception $e) {
             DB::rollBack();
             $output = [
-                'success'=>1,
-                'msg'=>_('Delete successfully')
+                'error'=>0,
+                'msg'=>_('Something went wrong')
             ];
         }
         return redirect()->route('role.index')->with($output);

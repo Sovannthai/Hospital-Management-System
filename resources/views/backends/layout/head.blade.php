@@ -1,7 +1,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@yield('page_title','Admin Dashboard')</title>
+    <title>@yield('title','Admin Dashboard')</title>
+    <link rel="icon" href="{{ asset('uploads/all_photo/title.png') }}" type="image/png">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
 
     <!-- Google Font: Source Sans Pro -->

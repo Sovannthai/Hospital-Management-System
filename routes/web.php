@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\Backends\PermissionController;
+use App\Http\Controllers\Backends\UserController;
+use Illuminate\Routing\RouteRegistrar;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,4 +33,6 @@ Route::group(['middleware' => ['auth']], function () {
         Route::put('/update_role/{id}', 'UpdateRole')->name('update_role');
         Route::delete('/delete/{id}', 'DestroyRole')->name('destroy_role');
     });
+    //User
+    Route::resource('user',UserController::class);
 });

@@ -1,5 +1,13 @@
 @extends('backends.master')
 @section('contents')
+<style>
+    .btn-edit{
+        border-radius: 100%;
+    }
+    .btn-delete{
+        border-radius: 100%;
+    }
+</style>
 <div class="card">
     <div class="card-header text-uppercase">
         List Role
@@ -9,7 +17,7 @@
         <table class="table table-striped datatable nowrap table-bordered">
             <thead class="table-dark">
                 <tr>
-                    <th class="table-plus datatable-nosort">Name</th>
+                    <th>Name</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -18,11 +26,11 @@
                 <tr>
                     <td class="table-plus">{{ $role->name }}</td>
                     <td>
-                        <a href="{{ route('edit_role', ['id' => $role->id]) }}" class="btn btn-primary btn-sm"><i class="fa-regular fa-pen-to-square"></i></a>
+                        <a href="{{ route('edit_role', ['id' => $role->id]) }}" class="btn btn-primary btn-sm btn-edit"><i class="fa-regular fa-pen-to-square"></i></a>
                         <form action="{{ route('destroy_role', ['id' => $role->id]) }}" method="POST" class="d-inline-block" id="delete-form-{{ $role->id }}">
                             @csrf
                             @method('DELETE')
-                            <button type="button" class="btn btn-sm btn-danger" onclick="confirmDelete({{ $role->id }})"><i class="fa-solid fa-trash"></i></button>
+                            <button type="button" class="btn btn-sm btn-danger btn-delete" onclick="confirmDelete({{ $role->id }})"><i class="fa-solid fa-trash"></i></button>
                         </form>
                     </td>
                 </tr>
