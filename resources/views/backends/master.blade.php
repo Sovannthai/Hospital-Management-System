@@ -34,7 +34,7 @@
       {{-- <b>Version</b> 3.2.0 --}}
     </div>
 
-    <strong>©Copyright-DevTeam || @ 2024</strong>
+    <strong>©Copyright-KAKNISET || @ 2024</strong>
   </footer>
 
   <!-- Control Sidebar -->
