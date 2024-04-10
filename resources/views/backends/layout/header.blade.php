@@ -44,7 +44,7 @@
                 </li>
                 <!-- Menu Footer-->
                 <li class="user-footer">
-                    <a href="#" class="btn  btn-flat btn-outline-secondary">Profile</a>
+                    <a href="{{ route('profile.edit',['id'=>auth()->user()->id]) }}" class="btn  btn-flat btn-outline-primary">Profile</a>
                     <form action="{{ route('logout') }}" method="post" style="display: inline-block;">
                         @csrf
                         <button type="submit" class="btn  btn-flat btn-outline-danger" style="position: relative;

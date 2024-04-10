@@ -1,5 +1,5 @@
 @extends('backends.master')
-@section('content')
+@section('contents')
 <style>
     .row {
         position: relative;
@@ -13,9 +13,8 @@
     }
 
 </style>
-</div>
-<div class="">
-    <div class="pd-20 card-box ">
+<div class="card">
+    <div class="card-body">
         <form action="{{ route('update_role',['id'=>$role->id]) }}" method="POST" class="">
             @csrf
             @method('PUT')
@@ -366,7 +365,8 @@
                 </div>
             </div>
             <hr>
-            <button class="btn btn-success mb-3" style="position: relative;left:1080px;">Update</button>
+            <button type="submit" class="btn btn-primary float-lg-right ml-1">Update</button>
+            <a href="{{ route('role.index') }}" class="btn btn-secondary float-lg-right">Close</a>
         </form>
     </div>
 </div>

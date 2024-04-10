@@ -19,6 +19,35 @@ class UserController extends Controller
         $image->move(public_path('uploads/all_photo'), $imageName);
         return $imageName;
     }
+    public function edit_profile(Request $request, $id)
+    {
+        $user = User::find($id);
+        return view('backends.user.profile', compact('user'));
+    }
+    public function update_profile(Request $request, $id)
+    {
+        try {
+            $user = User::find($id);
+            $user->name = $request->name;
+            $user->username = $request->username;
+            $user->email = $request->email;
+            $user->password = $request->password;
+            if ($request->hasFile('photo')) {
+                $user->photo = $this->uploadImage($request->file('photo'));
+            }
+            $user->save();
+            $output = [
+                'success' => 1,
+                'msg' => Lang::get('Profile Updated successfully')
+            ];
+        } catch (\Exception $e) {
+            $output = [
+                'error' => 0,
+                'msg' => trans('Something went wrong')
+            ];
+        }
+        return redirect()->route('home')->with($output);
+    }
     /**
      * Display a listing of the resource.
      */
@@ -57,12 +86,12 @@ class UserController extends Controller
             $user->save();
             $output = [
                 'success' => 1,
-                'msg' =>Lang::get('Create successfully')
+                'msg' => Lang::get('Create successfully')
             ];
         } catch (\Exception $e) {
             $output = [
                 'error' => 0,
-                'msg' =>trans('Something went wrong')
+                'msg' => trans('Something went wrong')
             ];
         }
         return redirect()->route('user.index')->with($output);
@@ -106,12 +135,12 @@ class UserController extends Controller
             $user->save();
             $output = [
                 'success' => 1,
-                'msg' =>Lang::get('Updated successfully')
+                'msg' => Lang::get('Updated successfully')
             ];
         } catch (\Exception $e) {
             $output = [
                 'error' => 0,
-                'msg' =>trans('Something went wrong')
+                'msg' => trans('Something went wrong')
             ];
         }
         return redirect()->route('user.index')->with($output);
@@ -132,12 +161,12 @@ class UserController extends Controller
             DB::commit();
             $output = [
                 'success' => 1,
-                'msg' =>Lang::get('Deleted successfully')
+                'msg' => Lang::get('Deleted successfully')
             ];
         } catch (\Exception $e) {
             $output = [
                 'error' => 0,
-                'msg' =>trans('Something went wrong')
+                'msg' => trans('Something went wrong')
             ];
         }
         return redirect()->route('user.index')->with($output);

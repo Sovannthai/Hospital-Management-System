@@ -24,6 +24,9 @@ Admin Dashboard
 </style>
 @section('contents')
 <div class="container-fluid">
+    <div>
+        <h3>Welcome, {{ auth()->user()->name }}</h3>
+    </div>
     <!-- Content Row -->
     <div class="row">
         <!-- Income -->
@@ -98,7 +101,6 @@ Admin Dashboard
         </div>
     </div>
 </div>
-
 @endsection
 @push('js')
 <script src="vendor/jquery-easing/jquery.easing.min.js"></script>

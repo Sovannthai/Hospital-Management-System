@@ -73,7 +73,7 @@ class RoleController extends Controller
         foreach ($role->permissions as $role_perm) {
             $role_permissions[] = $role_perm->name;
         }
-        return view('backends.role.create', compact('role', 'role_permissions'));
+        return view('backends.role.edit', compact('role', 'role_permissions'));
     }
 
     public function UpdateRole(Request $request, $id)

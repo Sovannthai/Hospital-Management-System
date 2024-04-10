@@ -35,4 +35,6 @@ Route::group(['middleware' => ['auth']], function () {
     });
     //User
     Route::resource('user',UserController::class);
+    Route::get('profile/edit/{id}',[UserController::class,'edit_profile'])->name('profile.edit');
+    Route::put('profile/update/{id}',[UserController::class,'update_profile'])->name('profile.update');
 });
