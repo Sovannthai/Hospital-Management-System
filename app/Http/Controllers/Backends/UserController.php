@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
@@ -56,12 +57,12 @@ class UserController extends Controller
             $user->save();
             $output = [
                 'success' => 1,
-                'msg' => _('Create successfully')
+                'msg' =>Lang::get('Create successfully')
             ];
         } catch (\Exception $e) {
             $output = [
                 'error' => 0,
-                'msg' => _('Something went wrong')
+                'msg' =>trans('Something went wrong')
             ];
         }
         return redirect()->route('user.index')->with($output);
@@ -105,12 +106,12 @@ class UserController extends Controller
             $user->save();
             $output = [
                 'success' => 1,
-                'msg' => _('Updated successfully')
+                'msg' =>Lang::get('Updated successfully')
             ];
         } catch (\Exception $e) {
             $output = [
                 'error' => 0,
-                'msg' => _('Something went wrong')
+                'msg' =>trans('Something went wrong')
             ];
         }
         return redirect()->route('user.index')->with($output);
@@ -131,12 +132,12 @@ class UserController extends Controller
             DB::commit();
             $output = [
                 'success' => 1,
-                'msg' => _('Deleted successfully')
+                'msg' =>Lang::get('Deleted successfully')
             ];
         } catch (\Exception $e) {
             $output = [
                 'error' => 0,
-                'msg' => _('Something went wrong')
+                'msg' =>trans('Something went wrong')
             ];
         }
         return redirect()->route('user.index')->with($output);

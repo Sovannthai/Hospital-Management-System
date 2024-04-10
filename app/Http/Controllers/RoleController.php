@@ -7,6 +7,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Role;
+use Illuminate\Support\Facades\Lang;
 use Spatie\Permission\Models\Permission;
 
 class RoleController extends Controller
@@ -50,23 +51,23 @@ class RoleController extends Controller
                 $roles->syncPermissions($permissions);
             }
             $output = [
-                'success'=>1,
-                'msg'=>_('Create successfully')
+                'success' => 1,
+                'msg' => Lang::get('Create successfully')
             ];
             return redirect()->route('role.index')->with($output);
         } else {
             $output = [
-                'error'=>0,
-                'msg'=>_('Something went wrong')
+                'error' => 0,
+                'msg' => trans('Something went wrong')
             ];
             return redirect()->route('role.index')->with($output);
         }
     }
     public function EditRole($id)
     {
-        if (!auth()->user()->can('edit.role')) {
-            abort(403, 'Unauthorized action.');
-        }
+        // if (!auth()->user()->can('edit.role')) {
+        //     abort(403, 'Unauthorized action.');
+        // }
         $role = Role::with(['permissions'])->find($id);
         $role_permissions = [];
         foreach ($role->permissions as $role_perm) {
@@ -95,9 +96,17 @@ class RoleController extends Controller
             if (!empty($permissions)) {
                 $role->syncPermissions($permissions);
             }
-            return redirect()->route('role.index')->with('update', 'Role updated successfully !');
+            $output = [
+                'success' => 1,
+                'msg' => Lang::get('Update successfully')
+            ];
+            return redirect()->route('role.index')->with($output);
         } else {
-            return redirect()->route('role.index')->with('error', 'Something went wrong !');
+            $output = [
+                'error' => 0,
+                'msg' => trans('Something went wrong')
+            ];
+            return redirect()->route('role.index')->with($output);
         }
     }
 
@@ -110,14 +119,14 @@ class RoleController extends Controller
 
             DB::commit();
             $output = [
-                'success'=>1,
-                'msg'=>_('Delete successfully')
+                'success' => 1,
+                'msg' => Lang::get('Delete successfully')
             ];
         } catch (Exception $e) {
             DB::rollBack();
             $output = [
-                'error'=>0,
-                'msg'=>_('Something went wrong')
+                'error' => 0,
+                'msg' => trans('Something went wrong')
             ];
         }
         return redirect()->route('role.index')->with($output);

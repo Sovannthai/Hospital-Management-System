@@ -1,13 +1,5 @@
 @extends('backends.master')
 @section('contents')
-<style>
-    .btn-edit{
-        border-radius: 100%;
-    }
-    .btn-delete{
-        border-radius: 100%;
-    }
-</style>
 <div class="card">
     <div class="card-header text-uppercase">
         List Role
@@ -26,11 +18,13 @@
                 <tr>
                     <td class="table-plus">{{ $role->name }}</td>
                     <td>
-                        <a href="{{ route('edit_role', ['id' => $role->id]) }}" class="btn btn-primary btn-sm btn-edit"><i class="fa-regular fa-pen-to-square"></i></a>
-                        <form action="{{ route('destroy_role', ['id' => $role->id]) }}" method="POST" class="d-inline-block" id="delete-form-{{ $role->id }}">
+                        <a href="{{ route('edit_role', ['id' => $role->id]) }}" class="btn btn-primary btn-sm btn-style"><i class="fa-regular fa-pen-to-square"></i></a>
+                        <form id="deleteForm" action="{{ route('destroy_role',['id'=>$role->id]) }}" method="POST" class="d-inline-block">
                             @csrf
                             @method('DELETE')
-                            <button type="button" class="btn btn-sm btn-danger btn-delete" onclick="confirmDelete({{ $role->id }})"><i class="fa-solid fa-trash"></i></button>
+                            <button type="button" class="btn btn-danger btn-outline btn-circle btn-sm btn-md delete-btn btn-style" title="@lang('Delete')">
+                                <i class="fa fa-trash ambitious-padding-btn"></i>
+                            </button>
                         </form>
                     </td>
                 </tr>
@@ -45,22 +39,5 @@
         </table>
     </div>
 </div>
-<script>
-    function confirmDelete(role) {
-        Swal.fire({
-            title: "Are you sure?"
-            , text: "You want to delete this record!"
-            , icon: "warning"
-            , showCancelButton: true
-            , confirmButtonColor: "#3085d6"
-            , cancelButtonColor: "#d33"
-            , confirmButtonText: "Yes, delete it!"
-        }).then((result) => {
-            if (result.isConfirmed) {
-                document.getElementById('delete-form-' + role).submit();
-            }
-        });
-    }
 
-</script>
 @endsection

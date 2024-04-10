@@ -1,12 +1,6 @@
 @extends('backends.master')
 @section('title','User Managementd')
 @section('contents')
-<style>
-    .btn-circle {
-        border-radius: 100%;
-    }
-
-</style>
 <div class="card">
     <div class="card-header text-uppercase">
         User List
@@ -37,12 +31,11 @@
                     <td>{{ $user->username }}</td>
                     <td>{{ $user->email }}</td>
                     <td>
-                        {{-- <a href="" class="btn btn-secondary btn-outline btn-circle btn-sm" data-toggle="tooltip" title="@lang('View')"><i class="fa fa-eye ambitious-padding-btn"></i></a>&nbsp;&nbsp; --}}
-                        <a href="{{ route('user.edit',['user'=>$user->id]) }}" class="btn btn-primary btn-outline btn-circle btn-sm btn-md" data-toggle="tooltip" title="@lang('Edit')"><i class="fa fa-edit ambitious-padding-btn"></i></a>&nbsp;&nbsp;
+                        <a href="{{ route('user.edit',['user'=>$user->id]) }}" class="btn btn-primary btn-outline btn-style btn-sm btn-md" data-toggle="tooltip" title="@lang('Edit')"><i class="fa fa-edit ambitious-padding-btn"></i></a>&nbsp;&nbsp;
                         <form id="deleteForm" action="{{ route('user.destroy',['user'=>$user->id]) }}" method="POST" class="d-inline-block">
                             @csrf
                             @method('DELETE')
-                            <button type="button" class="btn btn-danger btn-outline btn-circle btn-sm btn-md delete-btn" title="@lang('Delete')">
+                            <button type="button" class="btn btn-danger btn-outline btn-style btn-sm btn-md delete-btn" title="@lang('Delete')">
                                 <i class="fa fa-trash ambitious-padding-btn"></i>
                             </button>
                         </form>
@@ -54,25 +47,6 @@
     </div>
 </div>
 @push('js')
-<script>
-    $(document).on('click', '.delete-btn', function(e) {
-        e.preventDefault();
-        var form = $(this).closest('form');
-        Swal.fire({
-            title: "Are you sure?"
-            , text: "You won't be able to revert this!"
-            , icon: "warning"
-            , showCancelButton: true
-            , confirmButtonColor: "#3085d6"
-            , cancelButtonColor: "#d33"
-            , confirmButtonText: "Yes, delete it!"
-        }).then((result) => {
-            if (result.isConfirmed) {
-                form.submit();
-            }
-        });
-    });
 
-</script>
 @endpush
 @endsection

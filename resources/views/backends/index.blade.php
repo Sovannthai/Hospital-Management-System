@@ -1,22 +1,26 @@
 @extends('backends.master')
 @section('page_title')
-    Admin Dashboard
+Admin Dashboard
 @endsection
 <style>
-    .home-dash{
+    .home-dash {
         transition: 0.5s;
     }
-    .home-dash:hover{
+
+    .home-dash:hover {
         transform: 1.5s;
         transform: translateY(-15px);
     }
-    .home-dash-3{
+
+    .home-dash-3 {
         transition: 0.5s;
     }
-    .home-dash-3:hover{
+
+    .home-dash-3:hover {
         transform: 1.5s;
         transform: translateY(15px);
     }
+
 </style>
 @section('contents')
 <div class="container-fluid">
@@ -82,7 +86,7 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
-                               Customers</div>
+                                Customers</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">20</div>
                         </div>
                         <div class="col-auto">
@@ -99,7 +103,7 @@
 @push('js')
 <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 <script>
-    $(document).ready(function(){
+    $(document).ready(function() {
         // config sidebar menu
         $('#sidebar-menu li').removeClass(' menu-is-opening menu-open');
         $('#sidebar-menu li a').removeClass('active');
@@ -109,5 +113,6 @@
         $('#menu_dashboard_bg').addClass('active');
 
     })
+
 </script>
 @endpush

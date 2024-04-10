@@ -37,6 +37,9 @@
 </head>
 
 <style type="text/css">
+.btn-style{
+    border-radius: 100%;
+}
 .pagination{
             float: right;
             margin-top: 10px;
