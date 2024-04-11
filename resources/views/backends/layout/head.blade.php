@@ -115,4 +115,7 @@ body:not(.sidebar-mini-md):not(.sidebar-mini-xs):not(.layout-top-nav) .content-w
 .brand-link{
   width: 280px!important;
 }
+.form-control{
+    border-radius: 0;
+}
 </style>
